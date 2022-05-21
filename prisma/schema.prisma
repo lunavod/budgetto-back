@@ -18,5 +18,57 @@ model User {
   authId            String  @unique
   passwordResetHash String? @unique
 
+  createdAt    DateTime       @default(now())
+  Tag          Tag[]
+  Purchase     Purchase[]
+  Store        Store[]
+  PurchaseItem PurchaseItem[]
+}
+
+model Tag {
+  id     String @id @default(uuid()) @db.Uuid
+  name   String
+  userId String @db.Uuid
+
+  user User @relation(fields: [userId], references: [id])
+
+  createdAt     DateTime       @default(now())
+  purchaseItems PurchaseItem[]
+}
+
+model Store {
+  id   String @id @default(uuid()) @db.Uuid
+  name String
+
+  user     User       @relation(fields: [userId], references: [id])
+  userId   String     @db.Uuid
+  Purchase Purchase[]
+}
+
+model Purchase {
+  id        String   @id @default(uuid()) @db.Uuid
   createdAt DateTime @default(now())
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @db.Uuid
+
+  store   Store  @relation(fields: [storeId], references: [id])
+  storeId String @db.Uuid
+
+  sum          Float
+  PurchaseItem PurchaseItem[]
+}
+
+model PurchaseItem {
+  id   String @id @default(uuid()) @db.Uuid
+  name String
+  sum  Float
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @db.Uuid
+
+  purchase   Purchase @relation(fields: [purchaseId], references: [id])
+  purchaseId String   @db.Uuid
+
+  tags Tag[]
 }

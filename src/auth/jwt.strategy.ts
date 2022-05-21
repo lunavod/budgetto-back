@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common'
 import { PassportStrategy } from '@nestjs/passport'
 import { plainToInstance } from 'class-transformer'
-import { ExtractJwt, Strategy } from 'passport-jwt'
+import { Strategy } from 'passport-jwt'
 import { UserEntity } from 'src/users/entities/user.entity'
 import { UsersService } from 'src/users/users.service'
 
