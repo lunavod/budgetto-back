@@ -1,0 +1,21 @@
+_id: req_wrk_4aa0e046411448b3b27bd0eafdf5f1f4ec114c4d
+type: Request
+parentId: wrk_4aa0e046411448b3b27bd0eafdf5f1f4
+modified: 1653235305530
+created: 1653233764482
+url: "{{ base_url }}/purchases/{{ purchaseId }}/items/{{ id }}"
+name: /purchases/{purchaseId}/items/{id}
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1653233764482
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

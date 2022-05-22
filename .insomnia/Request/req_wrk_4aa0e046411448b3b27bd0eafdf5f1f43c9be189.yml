@@ -1,0 +1,28 @@
+_id: req_wrk_4aa0e046411448b3b27bd0eafdf5f1f43c9be189
+type: Request
+parentId: wrk_4aa0e046411448b3b27bd0eafdf5f1f4
+modified: 1653235305521
+created: 1653233764470
+url: "{{ base_url }}/tags/{{ id }}"
+name: /tags/{id}
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "name": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1653233764470
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

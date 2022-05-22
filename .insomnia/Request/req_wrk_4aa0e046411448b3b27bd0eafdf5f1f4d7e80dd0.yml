@@ -1,0 +1,24 @@
+_id: req_wrk_4aa0e046411448b3b27bd0eafdf5f1f4d7e80dd0
+type: Request
+parentId: wrk_4aa0e046411448b3b27bd0eafdf5f1f4
+modified: 1653235305556
+created: 1653233764505
+url: "{{ base_url }}/auth/password-reset/{{ hash }}"
+name: /auth/password-reset/{hash}
+description: ""
+method: POST
+body: {}
+parameters:
+  - name: newPassword
+    disabled: false
+    value: string
+headers: []
+authentication: {}
+metaSortKey: -1653233764505
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

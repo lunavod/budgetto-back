@@ -1,0 +1,30 @@
+_id: req_wrk_4aa0e046411448b3b27bd0eafdf5f1f4ce717589
+type: Request
+parentId: wrk_4aa0e046411448b3b27bd0eafdf5f1f4
+modified: 1653235305535
+created: 1653233764487
+url: "{{ base_url }}/purchases/{{ id }}"
+name: /purchases/{id}
+description: ""
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "name": "string",
+      "sum": 0,
+      "storeId": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1653233764487
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

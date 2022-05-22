@@ -1,0 +1,21 @@
+_id: req_wrk_4aa0e046411448b3b27bd0eafdf5f1f438ebaed9
+type: Request
+parentId: wrk_4aa0e046411448b3b27bd0eafdf5f1f4
+modified: 1653235305561
+created: 1653233764507
+url: "{{ base_url }}/auth/profile"
+name: /auth/profile
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1653233764507
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

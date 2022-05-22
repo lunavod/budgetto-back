@@ -1,0 +1,21 @@
+_id: req_wrk_4aa0e046411448b3b27bd0eafdf5f1f459416e08
+type: Request
+parentId: wrk_4aa0e046411448b3b27bd0eafdf5f1f4
+modified: 1653235305516
+created: 1653233764455
+url: "{{ base_url }}/stores/{{ storeId }}/products/{{ id }}"
+name: /stores/{storeId}/products/{id}
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1653233764455
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

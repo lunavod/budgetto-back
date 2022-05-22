@@ -1,0 +1,21 @@
+_id: req_wrk_4aa0e046411448b3b27bd0eafdf5f1f4ad77eebf
+type: Request
+parentId: wrk_4aa0e046411448b3b27bd0eafdf5f1f4
+modified: 1653235305523
+created: 1653233764472
+url: "{{ base_url }}/tags/{{ id }}"
+name: /tags/{id}
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1653233764472
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

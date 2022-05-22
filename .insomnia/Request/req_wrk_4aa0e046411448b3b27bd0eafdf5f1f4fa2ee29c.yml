@@ -1,0 +1,24 @@
+_id: req_wrk_4aa0e046411448b3b27bd0eafdf5f1f4fa2ee29c
+type: Request
+parentId: wrk_4aa0e046411448b3b27bd0eafdf5f1f4
+modified: 1653235305558
+created: 1653233764506
+url: "{{ base_url }}/auth/password-reset"
+name: /auth/password-reset
+description: ""
+method: POST
+body: {}
+parameters:
+  - name: email
+    disabled: false
+    value: string
+headers: []
+authentication: {}
+metaSortKey: -1653233764506
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

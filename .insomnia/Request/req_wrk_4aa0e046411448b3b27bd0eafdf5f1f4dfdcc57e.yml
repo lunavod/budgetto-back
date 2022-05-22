@@ -1,0 +1,27 @@
+_id: req_wrk_4aa0e046411448b3b27bd0eafdf5f1f4dfdcc57e
+type: Request
+parentId: wrk_4aa0e046411448b3b27bd0eafdf5f1f4
+modified: 1653235305562
+created: 1653233764508
+url: "{{ base_url }}/auth/login"
+name: /auth/login
+description: ""
+method: POST
+body: {}
+parameters:
+  - name: username
+    disabled: false
+    value: string
+  - name: password
+    disabled: false
+    value: string
+headers: []
+authentication: {}
+metaSortKey: -1653233764508
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
