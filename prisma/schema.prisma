@@ -23,6 +23,7 @@ model User {
   Purchase     Purchase[]
   Store        Store[]
   PurchaseItem PurchaseItem[]
+  Product      Product[]
 }
 
 model Tag {
@@ -32,8 +33,8 @@ model Tag {
 
   user User @relation(fields: [userId], references: [id])
 
-  createdAt     DateTime       @default(now())
-  purchaseItems PurchaseItem[]
+  createdAt DateTime  @default(now())
+  products  Product[]
 }
 
 model Store {
@@ -43,10 +44,27 @@ model Store {
   user     User       @relation(fields: [userId], references: [id])
   userId   String     @db.Uuid
   Purchase Purchase[]
+  Product  Product[]
+}
+
+model Product {
+  id    String @id @default(uuid()) @db.Uuid
+  name  String
+  price Float
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @db.Uuid
+
+  store   Store  @relation(fields: [storeId], references: [id])
+  storeId String @db.Uuid
+
+  tags  Tag[]
+  items PurchaseItem[]
 }
 
 model Purchase {
   id        String   @id @default(uuid()) @db.Uuid
+  sum       Float
   createdAt DateTime @default(now())
 
   user   User   @relation(fields: [userId], references: [id])
@@ -55,20 +73,19 @@ model Purchase {
   store   Store  @relation(fields: [storeId], references: [id])
   storeId String @db.Uuid
 
-  sum          Float
   PurchaseItem PurchaseItem[]
 }
 
 model PurchaseItem {
-  id   String @id @default(uuid()) @db.Uuid
-  name String
-  sum  Float
+  id    String @id @default(uuid()) @db.Uuid
+  price Float
+
+  product   Product @relation(fields: [productId], references: [id])
+  productId String  @db.Uuid
 
   user   User   @relation(fields: [userId], references: [id])
   userId String @db.Uuid
 
   purchase   Purchase @relation(fields: [purchaseId], references: [id])
   purchaseId String   @db.Uuid
-
-  tags Tag[]
 }

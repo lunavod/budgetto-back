@@ -8,6 +8,7 @@ import {
   Delete,
   UseGuards,
 } from '@nestjs/common'
+import { ApiTags } from '@nestjs/swagger'
 import { User } from '@prisma/client'
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard'
 import { GetUser } from 'src/auth/user.decorator'
@@ -16,6 +17,7 @@ import { CreateTagDto } from './dto/create-tag.dto'
 import { UpdateTagDto } from './dto/update-tag.dto'
 import { TagService } from './tag.service'
 
+@ApiTags('tag')
 @Controller()
 export class TagController {
   constructor(private readonly tagService: TagService) {}

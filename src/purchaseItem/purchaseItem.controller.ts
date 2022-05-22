@@ -8,7 +8,7 @@ import {
   Delete,
   UseGuards,
 } from '@nestjs/common'
-import '@nestjs/swagger'
+import { ApiParam, ApiTags } from '@nestjs/swagger'
 import { Prisma, User } from '@prisma/client'
 import { omit } from 'lodash'
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard'
@@ -18,13 +18,11 @@ import { CreatePurchaseItemDto } from './dto/create-purchaseItem.dto'
 import { UpdatePurchaseItemDto } from './dto/update-purchaseItem.dto'
 import { PurchaseItemService } from './purchaseItem.service'
 
+@ApiTags('purchaseItem')
 @Controller()
 export class PurchaseItemController {
   constructor(private readonly purchaseItemService: PurchaseItemService) {}
 
-  /**
-   * Test test test test
-   */
   @Post()
   @UseGuards(JwtAuthGuard)
   create(
@@ -36,41 +34,34 @@ export class PurchaseItemController {
       ...createPurchaseItemDto,
       userId: user.id,
       purchaseId,
-      tags: {
-        connect: createPurchaseItemDto.tags.map((t) => ({ id: t })),
-      },
     })
   }
 
+  @ApiParam({ name: 'purchaseId', type: 'string' })
   @Get()
   @UseGuards(JwtAuthGuard)
   findAll(@GetUser() user: User) {
     return this.purchaseItemService.findAll(user.id)
   }
 
+  @ApiParam({ name: 'purchaseId', type: 'string' })
   @Get(':id')
   @UseGuards(JwtAuthGuard)
   findOne(@Param('id') id: string) {
     return this.purchaseItemService.findOne(id)
   }
 
+  @ApiParam({ name: 'purchaseId', type: 'string' })
   @Patch(':id')
   @UseGuards(JwtAuthGuard)
   update(
     @Param('id') id: string,
     @Body() updatePurchaseItemDto: UpdatePurchaseItemDto,
   ) {
-    const data: Prisma.PurchaseItemUncheckedUpdateInput = {
-      ...omit(updatePurchaseItemDto, 'tags'),
-    }
-    if (updatePurchaseItemDto.tags)
-      data.tags = {
-        connect: updatePurchaseItemDto.tags.map((t) => ({ id: t })),
-      }
-
-    return this.purchaseItemService.update(id, data)
+    return this.purchaseItemService.update(id, updatePurchaseItemDto)
   }
 
+  @ApiParam({ name: 'purchaseId', type: 'string' })
   @Delete(':id')
   @UseGuards(JwtAuthGuard)
   remove(@Param('id') id: string) {

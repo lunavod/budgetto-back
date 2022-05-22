@@ -1,12 +1,15 @@
 import '@nestjs/swagger'
-import { IsString, IsNumber } from 'class-validator'
+import { IsString, IsNumber, IsUUID } from 'class-validator'
 
 export class CreatePurchaseItemDto {
   @IsString()
   name: string
 
   @IsNumber()
-  sum: number
+  price: number
+
+  @IsUUID()
+  productId: string
 
   tags: string[]
 }

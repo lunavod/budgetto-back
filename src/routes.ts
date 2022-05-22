@@ -1,4 +1,5 @@
 import { AuthModule } from './auth/auth.module'
+import { ProductModule } from './product/product.module'
 import { PurchaseModule } from './purchase/purchase.module'
 import { PurchaseItemModule } from './purchaseItem/purchaseItem.module'
 import { StoreModule } from './store/store.module'
@@ -10,7 +11,9 @@ const r = new Router()
 
 r.resource('auth', AuthModule)
 r.resource('users', UsersModule)
-r.resource('stores', StoreModule)
+r.resource('stores', StoreModule, (r) => {
+  r.resource(':storeId/products', ProductModule)
+})
 r.resource('tags', TagModule)
 r.resource('purchases', PurchaseModule, (r) => {
   r.resource(':purchaseId/items', PurchaseItemModule)

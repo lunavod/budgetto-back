@@ -8,6 +8,7 @@ import {
   Delete,
   UseGuards,
 } from '@nestjs/common'
+import { ApiTags } from '@nestjs/swagger'
 import { User } from '@prisma/client'
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard'
 import { GetUser } from 'src/auth/user.decorator'
@@ -16,6 +17,7 @@ import { CreateStoreDto } from './dto/create-store.dto'
 import { UpdateStoreDto } from './dto/update-store.dto'
 import { StoreService } from './store.service'
 
+@ApiTags('store')
 @Controller()
 export class StoreController {
   constructor(private readonly storeService: StoreService) {}

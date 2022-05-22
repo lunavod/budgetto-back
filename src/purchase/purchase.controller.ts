@@ -8,6 +8,7 @@ import {
   Delete,
   UseGuards,
 } from '@nestjs/common'
+import { ApiTags } from '@nestjs/swagger'
 import { User } from '@prisma/client'
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard'
 import { GetUser } from 'src/auth/user.decorator'
@@ -16,6 +17,7 @@ import { CreatePurchaseDto } from './dto/create-purchase.dto'
 import { UpdatePurchaseDto } from './dto/update-purchase.dto'
 import { PurchaseService } from './purchase.service'
 
+@ApiTags('purchase')
 @Controller()
 export class PurchaseController {
   constructor(private readonly purchaseService: PurchaseService) {}

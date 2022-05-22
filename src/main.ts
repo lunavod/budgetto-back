@@ -13,6 +13,8 @@ async function bootstrap() {
   app.useGlobalInterceptors(new TransformInterceptor())
   app.useGlobalPipes(new ValidationPipe())
 
+  const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000
+
   const config = new DocumentBuilder()
     .setTitle('Backend')
     .setVersion('1.0')
@@ -20,10 +22,11 @@ async function bootstrap() {
       { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' },
       'access-token',
     )
+    .addServer(`http://localhost:${port}`)
     .build()
   const document = SwaggerModule.createDocument(app, config)
   SwaggerModule.setup('api', app, document)
 
-  await app.listen(process.env.PORT ? parseInt(process.env.PORT, 10) : 3000)
+  await app.listen(port)
 }
 bootstrap()
