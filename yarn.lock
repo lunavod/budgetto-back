@@ -2036,6 +2036,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/fast-levenshtein@npm:0.0.1":
+  version: 0.0.1
+  resolution: "@types/fast-levenshtein@npm:0.0.1"
+  checksum: a2ac66bdcaedbfee491822d53835979b7ccbc650dbb98033d2d808b25185bfbfab2f0de4c737fd7488b351447972e7d77ffc7fe0add996150635698a245744ef
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:*, @types/json-schema@npm:^7.0.8, @types/json-schema@npm:^7.0.9":
   version: 7.0.11
   resolution: "@types/json-schema@npm:7.0.11"
@@ -2079,6 +2086,16 @@ __metadata:
   dependencies:
     "@types/express": "*"
   checksum: 680cb0710aa25264d20cdcdaf34c212b636b55ea141310f06c25354ab1401193c7aa6839f9d22abf64a223fab1f2b8287f2512b0bef7e1628c4e9ffe54b4aeb2
+  languageName: node
+  linkType: hard
+
+"@types/node-fetch@npm:^2.1.2":
+  version: 2.6.1
+  resolution: "@types/node-fetch@npm:2.6.1"
+  dependencies:
+    "@types/node": "*"
+    form-data: ^3.0.0
+  checksum: a3e5d7f413d1638d795dff03f7b142b1b0e0c109ed210479000ce7b3ea11f9a6d89d9a024c96578d9249570c5fe5287a5f0f4aaba98199222230196ff2d6b283
   languageName: node
   linkType: hard
 
@@ -2144,6 +2161,13 @@ __metadata:
   version: 1.2.4
   resolution: "@types/range-parser@npm:1.2.4"
   checksum: b7c0dfd5080a989d6c8bb0b6750fc0933d9acabeb476da6fe71d8bdf1ab65e37c136169d84148034802f48378ab94e3c37bb4ef7656b2bec2cb9c0f8d4146a95
+  languageName: node
+  linkType: hard
+
+"@types/russian-nouns-js@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@types/russian-nouns-js@npm:1.2.1"
+  checksum: 905dc9f14163496c111938f8d1eec3909aead4c04a4270bb651285ad5142bdc30e4a02274c6d791b7f3e075eb4c69ce41ac70be420a0289a8894742fc3b46ad8
   languageName: node
   linkType: hard
 
@@ -2602,6 +2626,13 @@ __metadata:
     require-from-string: ^2.0.2
     uri-js: ^4.2.2
   checksum: 5e0ff226806763be73e93dd7805b634f6f5921e3e90ca04acdf8db81eed9d8d3f0d4c5f1213047f45ebbf8047ffe0c840fa1ef2ec42c3a644899f69aa72b5bef
+  languageName: node
+  linkType: hard
+
+"alice-renderer@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "alice-renderer@npm:1.4.1"
+  checksum: 6ef7b9f7aeaaa25d599c445b21df3e6ab8fc153ea8a43d5a5e0634108d5b214ca539970a6005e8811233b82bcbdd1dd3db11838595dd6ae6b710568bb3174ce0
   languageName: node
   linkType: hard
 
@@ -4343,6 +4374,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"form-data@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "form-data@npm:3.0.1"
+  dependencies:
+    asynckit: ^0.4.0
+    combined-stream: ^1.0.8
+    mime-types: ^2.1.12
+  checksum: b019e8d35c8afc14a2bd8a7a92fa4f525a4726b6d5a9740e8d2623c30e308fbb58dc8469f90415a856698933c8479b01646a9dff33c87cc4e76d72aedbbf860d
+  languageName: node
+  linkType: hard
+
 "form-data@npm:^4.0.0":
   version: 4.0.0
   resolution: "form-data@npm:4.0.0"
@@ -5910,7 +5952,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.7":
+"node-fetch@npm:^2.1.2, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.7":
   version: 2.6.7
   resolution: "node-fetch@npm:2.6.7"
   dependencies:
@@ -6767,6 +6809,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"russian-nouns-js@npm:^1.3.1":
+  version: 1.3.1
+  resolution: "russian-nouns-js@npm:1.3.1"
+  checksum: 546d307db7fcfbb1d2c3da8a222ebb516d05096555a5001caff28ecf5d4597c6bbbffebffaa6609f2f76d45be9b3a6a4bcb3f6e93c11c7c4ca3966b607cc0756
+  languageName: node
+  linkType: hard
+
 "rxjs@npm:6.6.7, rxjs@npm:^6.6.0":
   version: 6.6.7
   resolution: "rxjs@npm:6.6.7"
@@ -7431,10 +7480,12 @@ __metadata:
     "@types/multer": ^1.4.7
     "@types/node": ^16.0.0
     "@types/passport-jwt": ^3.0.6
+    "@types/russian-nouns-js": ^1.2.1
     "@types/supertest": ^2.0.11
     "@types/uuid": ^8.3.4
     "@typescript-eslint/eslint-plugin": ^5.10.0
     "@typescript-eslint/parser": ^5.10.0
+    alice-renderer: ^1.4.1
     babel-eslint: ^10.1.0
     bcrypt: ^5.0.1
     class-transformer: ^0.5.1
@@ -7454,6 +7505,7 @@ __metadata:
     prisma: ^3.9.1
     reflect-metadata: ^0.1.13
     rimraf: ^3.0.2
+    russian-nouns-js: ^1.3.1
     rxjs: ^7.2.0
     source-map-support: ^0.5.20
     swagger-ui-express: ^4.3.0
@@ -7462,6 +7514,7 @@ __metadata:
     tsconfig-paths: ^3.10.1
     typescript: ^4.5.5
     uuid: ^8.3.2
+    yandex-dialogs-sdk: ^2.3.0
   languageName: unknown
   linkType: soft
 
@@ -7956,6 +8009,19 @@ __metadata:
   version: 1.10.2
   resolution: "yaml@npm:1.10.2"
   checksum: ce4ada136e8a78a0b08dc10b4b900936912d15de59905b2bf415b4d33c63df1d555d23acb2a41b23cf9fb5da41c256441afca3d6509de7247daa062fd2c5ea5f
+  languageName: node
+  linkType: hard
+
+"yandex-dialogs-sdk@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "yandex-dialogs-sdk@npm:2.3.0"
+  dependencies:
+    "@types/fast-levenshtein": 0.0.1
+    "@types/node-fetch": ^2.1.2
+    debug: ^4.1.0
+    fast-levenshtein: ^2.0.6
+    node-fetch: ^2.1.2
+  checksum: c9e93b0a5a5f53698b910b11a0e65367f05213c8b123f3ff73ba57fc71a5478842cef57044a6d7ff039a90df86c0b22c5ca4c7cbe669b1a4683b20cffbb8541b
   languageName: node
   linkType: hard
 

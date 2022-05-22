@@ -24,6 +24,7 @@ model User {
   Store        Store[]
   PurchaseItem PurchaseItem[]
   Product      Product[]
+  AliceOauth   AliceOauth[]
 }
 
 model Tag {
@@ -41,8 +42,9 @@ model Store {
   id   String @id @default(uuid()) @db.Uuid
   name String
 
-  user     User       @relation(fields: [userId], references: [id])
-  userId   String     @db.Uuid
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @db.Uuid
+
   Purchase Purchase[]
   Product  Product[]
 }
@@ -88,4 +90,14 @@ model PurchaseItem {
 
   purchase   Purchase @relation(fields: [purchaseId], references: [id])
   purchaseId String   @db.Uuid
+}
+
+model AliceOauth {
+  id String @id @default(uuid()) @db.Uuid
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @db.Uuid
+
+  code  String
+  token String?
 }
